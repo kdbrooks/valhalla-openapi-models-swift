@@ -37,12 +37,13 @@ public struct ServiceLimits: Codable, Hashable {
     public var pedestrian: ServiceLimitsPedestrian?
     public var skadi: ServiceLimitsSkadi?
     public var status: ServiceLimitsStatus?
+    public var tile: ServiceLimitsStatus?
     public var taxi: ServiceLimitsAuto?
     public var trace: ServiceLimitsTrace?
     public var transit: ServiceLimitsBicycle?
     public var truck: ServiceLimitsAuto?
 
-    public init(allowHardExclusions: Bool? = false, auto: ServiceLimitsAuto? = nil, autoPedestrian: ServiceLimitsAutoPedestrian? = nil, bicycle: ServiceLimitsBicycle? = nil, bikeshare: ServiceLimitsBicycle? = nil, bus: ServiceLimitsBus? = nil, centroid: ServiceLimitsCentroid? = nil, hierarchyLimits: ServiceLimitsHierarchyLimits? = nil, isochrone: ServiceLimitsIsochrone? = nil, maxAlternates: Int? = 2, maxDistanceDisableHierarchyCulling: Int? = 0, maxExcludeLocations: Int? = 50, maxExcludePolygonsLength: Int? = 10000, maxExcludePolygonsVertices: Int? = 100, maxLinearCostEdges: Int? = 50000, maxRadius: Int? = 200, maxReachability: Int? = 100, maxTimedepDistance: Int? = 500_000, maxTimedepDistanceMatrix: Int? = 0, minLinearCostFactor: Int? = 1, motorScooter: ServiceLimitsBicycle? = nil, motorcycle: ServiceLimitsBicycle? = nil, multimodal: ServiceLimitsMultimodal? = nil, pedestrian: ServiceLimitsPedestrian? = nil, skadi: ServiceLimitsSkadi? = nil, status: ServiceLimitsStatus? = nil, taxi: ServiceLimitsAuto? = nil, trace: ServiceLimitsTrace? = nil, transit: ServiceLimitsBicycle? = nil, truck: ServiceLimitsAuto? = nil) {
+    public init(allowHardExclusions: Bool? = false, auto: ServiceLimitsAuto? = nil, autoPedestrian: ServiceLimitsAutoPedestrian? = nil, bicycle: ServiceLimitsBicycle? = nil, bikeshare: ServiceLimitsBicycle? = nil, bus: ServiceLimitsBus? = nil, centroid: ServiceLimitsCentroid? = nil, hierarchyLimits: ServiceLimitsHierarchyLimits? = nil, isochrone: ServiceLimitsIsochrone? = nil, maxAlternates: Int? = 2, maxDistanceDisableHierarchyCulling: Int? = 0, maxExcludeLocations: Int? = 50, maxExcludePolygonsLength: Int? = 10000, maxExcludePolygonsVertices: Int? = 100, maxLinearCostEdges: Int? = 50000, maxRadius: Int? = 200, maxReachability: Int? = 100, maxTimedepDistance: Int? = 500_000, maxTimedepDistanceMatrix: Int? = 0, minLinearCostFactor: Int? = 1, motorScooter: ServiceLimitsBicycle? = nil, motorcycle: ServiceLimitsBicycle? = nil, multimodal: ServiceLimitsMultimodal? = nil, pedestrian: ServiceLimitsPedestrian? = nil, skadi: ServiceLimitsSkadi? = nil, status: ServiceLimitsStatus? = nil, tile: ServiceLimitsStatus? = nil, taxi: ServiceLimitsAuto? = nil, trace: ServiceLimitsTrace? = nil, transit: ServiceLimitsBicycle? = nil, truck: ServiceLimitsAuto? = nil) {
         self.allowHardExclusions = allowHardExclusions
         self.auto = auto
         self.autoPedestrian = autoPedestrian
@@ -69,6 +70,7 @@ public struct ServiceLimits: Codable, Hashable {
         self.pedestrian = pedestrian
         self.skadi = skadi
         self.status = status
+        self.tile = tile
         self.taxi = taxi
         self.trace = trace
         self.transit = transit
@@ -102,6 +104,7 @@ public struct ServiceLimits: Codable, Hashable {
         case pedestrian
         case skadi
         case status
+        case tile
         case taxi
         case trace
         case transit
@@ -138,6 +141,7 @@ public struct ServiceLimits: Codable, Hashable {
         try container.encodeIfPresent(pedestrian, forKey: .pedestrian)
         try container.encodeIfPresent(skadi, forKey: .skadi)
         try container.encodeIfPresent(status, forKey: .status)
+        try container.encodeIfPresent(tile, forKey: .tile)
         try container.encodeIfPresent(taxi, forKey: .taxi)
         try container.encodeIfPresent(trace, forKey: .trace)
         try container.encodeIfPresent(transit, forKey: .transit)

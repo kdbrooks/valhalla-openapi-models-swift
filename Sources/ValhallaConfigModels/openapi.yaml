@@ -720,6 +720,12 @@ components:
             allow_verbose:
               type: boolean
               default: false
+        tile:
+          type: object
+          properties:
+            allow_verbose:
+              type: boolean
+              default: false
         taxi:
           type: object
           properties:

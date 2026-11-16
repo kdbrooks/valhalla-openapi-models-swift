@@ -38,7 +38,6 @@
       "infer_internal_intersections": true,
       "infer_turn_channels": true,
       "apply_country_overrides": true,
-      "grid_divisions_within_tile": 32,
       "use_admin_db": true,
       "use_direction_on_ways": false,
       "allow_alt_name": false,
@@ -274,6 +273,9 @@
       "max_matrix_location_pairs": 0
     },
     "status": {
+      "allow_verbose": false
+    },
+    "tile": {
       "allow_verbose": false
     },
     "transit": {
